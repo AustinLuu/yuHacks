@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "@google-cloud/vision": "^2.3.0"
+    "@google-cloud/vision": "^2.3.0",
+    "chrono-node": "^2.2.0",
+    "moment": "^2.29.1",
+    "moment-jdateformatparser": "^1.2.1",
+    "sugar": "^2.0.6"
   }
 }

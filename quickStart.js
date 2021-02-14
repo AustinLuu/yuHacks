@@ -6,18 +6,12 @@ async function quickstart() {
     // Creates a client
     const client = new vision.ImageAnnotatorClient();
 
-    // Performs label detection on the image file
-    // const [result] = await client.labelDetection('./wakeupcat.jpg');
-    // const labels = result.labelAnnotations;
-    // console.log('Labels:');
-    // labels.forEach(label => console.log(label.description));
-
-    const [result] = await client.textDetection('./eventTest2.JPG');
+    const [result] = await client.textDetection('./eventTest.png');
     const detections = result.textAnnotations;
-    //console.log('Text:');
-    //detections.forEach(text => console.log(text.description));
     const text = detections[0].description.split("\n");
-    console.log(text);
+    console.log(text[1]);
+    var date = new Date("JAN 29 7");
+    console.log(date);
 }
 quickstart();
 }
