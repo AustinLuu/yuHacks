@@ -1,0 +1,110 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    display: grid;
+}
+
+header{
+    justify-content: center;
+}
+
+h1{
+    font-family: 'Manrope', sans-serif;
+    color: #008080;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #5f9ea0; */
+    text-align: center;
+    place-items: center;
+}
+ 
+.upload-form{
+    height: 350px;
+    width: 450px;
+}
+
+.upload-form .wrapper{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border: 2px dashed #729494;
+    border-radius: 10px;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.wrapper .upload-image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.wrapper .icon{
+    font-size: 100px;
+    color: #008080;
+}
+
+.wrapper .text{
+    font-size: 20px;
+    font-weight: 500;
+    color: #008080;
+}
+
+wrapper #cancel-btn{
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+    top: 15px;
+    color: #9658fe;
+    cursor: pointer;
+    display: none;
+  }
+  .wrapper.active:hover #cancel-btn i{
+    display: block;
+  }
+  .wrapper #cancel-btn i:hover{
+    color: #e74c3c;
+  }
+  .wrapper .file-name{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
+    color: #fff;
+    display: none;
+    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+  }
+  .wrapper.active:hover .file-name{
+    display: block;
+  }
+  
+  .container #custom-btn{
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+  }
+  

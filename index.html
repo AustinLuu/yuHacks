@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Text to GCal</title>
+  </head>
+  <header>
+      <h1>Text to GCal</h1>
+    </header>
+  <body>
+    <div class="upload-form">
+        <div class="wrapper">
+          <div class="upload-image">
+              <!-- <img src="./resources/eventTest.png"> -->
+          </div>
+          <div class="content">
+            <div class="icon"><ion-icon name="cloud-upload-outline"></ion-icon></div>
+            <div class="text">No file chosen</div>
+          </div>
+          <div id="cancel-btn"><ion-icon name="close-outline"></ion-icon></div>
+          <div class="file-name">File name here</i></div>
+        </div>
+        <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+        <input id="default-btn" type="file" hidden>
+      </div>
+  <script>
+        const wrapper = document.querySelector(".wrapper");
+        const fileName = document.querySelector(".file-name");
+        const defaultBtn = document.querySelector("#default-btn");
+        const customBtn = document.querySelector("#custom-btn");
+        const cancelBtn = document.querySelector("#cancel-btn i");
+        const img = document.querySelector("img");
+        let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+        function defaultBtnActive(){
+          defaultBtn.click();
+        }
+        defaultBtn.addEventListener("change", function(){
+          const file = this.files[0];
+          if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+              const result = reader.result;
+              img.src = result;
+              wrapper.classList.add("active");
+            }
+            cancelBtn.addEventListener("click", function(){
+              img.src = "";
+              wrapper.classList.remove("active");
+            })
+            reader.readAsDataURL(file);
+          }
+          if(this.value){
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+          }
+        });
+      </script>
+      <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    </body>
+  </html>
